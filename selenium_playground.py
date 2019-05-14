@@ -1,15 +1,18 @@
 # https://pythonspot.com/selenium-click-button/
 # https://www.techbeamers.com/handle-alert-popup-selenium-python/
 
-# Python with selenium module - you need to have silenium and chromedriver for this to work'
+# Python with selenium module - you need to have selenium and chromedriver for this to work'
 # Uses local html file, for testing selenium - Ponzi
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 import time
+# open window maximixed
+options = webdriver.ChromeOptions()
+options.add_argument("--start-maximized")
 
-driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')
+driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver',chrome_options=options)
 driver.get('file:///home/mthomas/python_progs/selenium_playground/html_testit/seltest.html')
 
 time.sleep(2)
